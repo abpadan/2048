@@ -13,7 +13,7 @@ public class Test2048 {
 		grid = gridObj.initGrid(grid);
 		String choice;
 
-		System.out.println("2048 game\nuse u for up, h for left\nk for right and n for down\n-1 to quit: \n");
+		System.out.println("2048 game\nuse u for up, h for left\nk for right and n for down\n-1 to quit:\n");
 		gridObj.startGrid(grid);
 		gridObj.printGrid(grid);
 
