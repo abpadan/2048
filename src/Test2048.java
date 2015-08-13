@@ -9,7 +9,7 @@ public class Test2048 {
 		Grid gridObj = new Grid();
 
 		Scanner scanner = new Scanner(System.in);
-		int grid[][] = new int[4][4];
+		int[][] grid = new int[4][4];
 		grid = gridObj.initGrid(grid);
 		String choice;
 
@@ -19,35 +19,27 @@ public class Test2048 {
 
 		do {
 			choice = scanner.next();
-
-			if (choice.equals("u")) {
-				if (gridObj.checkUpGrid(grid)) {
-					solverObj.mergeUp(grid);
-					solverObj.shiftUp(grid);
-					gridObj.addNewTile(grid);
-					gridObj.printGrid(grid);
-				} 
-			} else if (choice.equals("h")) {
-				if (gridObj.checkLeftGrid(grid)) {
-					solverObj.mergeLeft(grid);
-					solverObj.shiftLeft(grid);
-					gridObj.addNewTile(grid);
-					gridObj.printGrid(grid);
-				} 
-			} else if (choice.equals("k")) {
-				if (gridObj.checkRightGrid(grid)) {
-					solverObj.mergeRight(grid);
-					solverObj.shiftRight(grid);
-					gridObj.addNewTile(grid);
-					gridObj.printGrid(grid);
-				} 
-			} else if (choice.equals("n")) {
-				if (gridObj.checkDownGrid(grid)) {
-					solverObj.mergeDown(grid);
-					solverObj.shiftDown(grid);
-					gridObj.addNewTile(grid);
-					gridObj.printGrid(grid);
-				} 
+			
+			if (choice.equals("u") && gridObj.checkUpGrid(grid)) {
+				solverObj.mergeUp(grid);
+				solverObj.shiftUp(grid);
+				gridObj.addNewTile(grid);
+				gridObj.printGrid(grid);
+			} else if (choice.equals("h") && gridObj.checkLeftGrid(grid)) {
+				solverObj.mergeLeft(grid);
+				solverObj.shiftLeft(grid);
+				gridObj.addNewTile(grid);
+				gridObj.printGrid(grid);
+			} else if (choice.equals("k") && gridObj.checkRightGrid(grid)) {
+				solverObj.mergeRight(grid);
+				solverObj.shiftRight(grid);
+				gridObj.addNewTile(grid);
+				gridObj.printGrid(grid);
+			} else if (choice.equals("n") && gridObj.checkDownGrid(grid)) {
+				solverObj.mergeDown(grid);
+				solverObj.shiftDown(grid);
+				gridObj.addNewTile(grid);
+				gridObj.printGrid(grid);
 			}
 		} while (!choice.equals("-1") && gridObj.gameValid(grid));
 		
